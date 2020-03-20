@@ -17,13 +17,13 @@ function App() {
     if (e.key === 'Enter') {
       axios(apiurl + '&s=' + state.s)
         .then(({ data }) => {
-          let result = data.Search;
+          let results = data.Search;
 
           setState(prevState => {
-            return { ...prevState, result };
+            return { ...prevState, results };
           });
 
-          console.log(result);
+          console.log(results);
         })
         .catch(err => console.log(err));
     }
