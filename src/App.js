@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Search from './components/Search';
+import axios from 'axios';
 
 require('dotenv').config();
 
@@ -11,6 +12,22 @@ function App() {
   });
 
   const apiurl = process.env.REACT_APP_API_KEY;
+
+  const search = e => {
+    if (e.key === 'Enter') {
+      axios(apiurl + '&s=' + state.s)
+        .then(({ data }) => {
+          let result = data.Search;
+
+          setState(prevState => {
+            return { ...prevState, result };
+          });
+
+          console.log(result);
+        })
+        .catch(err => console.log(err));
+    }
+  };
 
   const handleInput = e => {
     let s = e.target.value;
@@ -27,7 +44,7 @@ function App() {
         <h1>Movie Database</h1>
       </header>
       <main>
-        <Search handleInput={handleInput} />
+        <Search handleInput={handleInput} search={search} />
       </main>
     </div>
   );
