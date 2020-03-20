@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Search from './components/Search';
 import axios from 'axios';
+import Results from './components/Results';
 
 require('dotenv').config();
 
@@ -44,7 +45,10 @@ function App() {
         <h1>Movie Database</h1>
       </header>
       <main>
-        <Search handleInput={handleInput} search={search} />
+        <div className="container">
+          <Search handleInput={handleInput} search={search} />
+          <Results results={state.results} />
+        </div>
       </main>
     </div>
   );
