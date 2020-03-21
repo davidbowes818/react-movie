@@ -17,15 +17,18 @@ function App() {
 
   const search = e => {
     if (e.key === 'Enter') {
+      state.results = [];
       axios(apiurl + '&s=' + state.s)
         .then(({ data }) => {
           let results = data.Search;
 
-          setState(prevState => {
-            return { ...prevState, results };
-          });
-
-          console.log(results);
+          if (results) {
+            setState(prevState => {
+              return { ...prevState, results };
+            });
+          } else {
+            return { results };
+          }
         })
         .catch(err => console.log(err));
     }
@@ -71,9 +74,7 @@ function App() {
 
           {typeof state.selected.Title != 'undefined' ? (
             <Popup selected={state.selected} closePopup={closePopup} />
-          ) : (
-            false
-          )}
+          ) : null}
         </div>
       </main>
     </div>
