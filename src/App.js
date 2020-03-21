@@ -13,7 +13,7 @@ function App() {
     selected: {}
   });
 
-  const apiurl = process.env.REACT_APP_API_KEY;
+  const apiurl = 'http://www.omdbapi.com/?apikey=21ac5212';
 
   const search = e => {
     if (e.key === 'Enter') {
@@ -29,8 +29,6 @@ function App() {
           } else {
             return { results };
           }
-
-          console.log(results);
         })
         .catch(err => console.log(err));
     }
@@ -42,8 +40,6 @@ function App() {
     setState(prevState => {
       return { ...prevState, s };
     });
-
-    console.log(state.s);
   };
 
   const openPopup = id => {
@@ -54,8 +50,6 @@ function App() {
         setState(prevState => {
           return { ...prevState, selected: result };
         });
-
-        console.log(result);
       })
       .catch(err => console.log(err));
   };
