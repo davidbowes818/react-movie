@@ -92,3 +92,71 @@ section {
   background: #fff;
   color: #223343;
 }
+
+/* Popup */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #445565;
+}
+
+.popup .content {
+  display: block;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.popup .content h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.popup .content h2 span {
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+.popup .content .rating {
+  margin-bottom: 1rem;
+}
+
+.popup .content .plot {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popup .content .plot img {
+  flex: 1 1 50%;
+  max-width: 300px;
+  padding: 0 1rem;
+}
+
+.popup .content .plot p {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+.popup .content .close {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: #4484c4;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.popup .content .close:hover {
+  background: #223343;
+}
