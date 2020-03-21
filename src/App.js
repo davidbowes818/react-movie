@@ -29,6 +29,8 @@ function App() {
           } else {
             return { results };
           }
+
+          console.log(results);
         })
         .catch(err => console.log(err));
     }
@@ -52,6 +54,8 @@ function App() {
         setState(prevState => {
           return { ...prevState, selected: result };
         });
+
+        console.log(result);
       })
       .catch(err => console.log(err));
   };

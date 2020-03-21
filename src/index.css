@@ -127,7 +127,8 @@ section {
   margin-bottom: 1rem;
 }
 
-.popup .content .plot {
+.popup .content .plot,
+.popup .content .cast {
   display: flex;
   flex-wrap: wrap;
 }
@@ -138,7 +139,8 @@ section {
   padding: 0 1rem;
 }
 
-.popup .content .plot p {
+.popup .content p,
+.popup .content .cast p {
   flex: 1 1 50%;
   padding: 1rem;
 }

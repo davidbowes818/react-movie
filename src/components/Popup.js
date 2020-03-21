@@ -12,6 +12,23 @@ const Popup = ({ selected, closePopup }) => {
           <img src={selected.Poster} alt="poster" />
           <p>{selected.Plot}</p>
         </div>
+        <p>
+          <strong>Directed by: </strong>
+          {selected.Director}
+        </p>
+        <p>
+          <strong>Cast: </strong>
+          {selected.Actors}
+        </p>
+        <p>
+          <strong>Written by: </strong>
+          {selected.Writer}
+        </p>
+        <p>
+          <strong>Released: </strong>
+          {selected.Released}
+        </p>
+
         <div className="btn-wrap">
           <button className="close" onClick={closePopup}>
             Close
